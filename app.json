@@ -1,15 +1,22 @@
 {
   "expo": {
-    "name": "my-app",
-    "slug": "my-app",
+    "name": "Voice Transcriber",
+    "slug": "voice-transcriber",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "voicetranscriber",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio",
+          "audio"
+        ]
+      },
+      "bundleIdentifier": "com.voicetranscriber.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +26,12 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.voicetranscriber.app"
     },
     "web": {
       "output": "static",
@@ -38,7 +50,8 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-audio"
     ],
     "experiments": {
       "typedRoutes": true,
